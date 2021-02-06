@@ -10,20 +10,21 @@ gotify = {
             throw "gotify url value empty, please use:  gotify.url == 'https://gotify.mydomain.tld'"
         } else if(gotify.token == "") {
             throw "gotify url value empty, please use:  gotify.token == 'xyzxyz'"
+        } else if(message === undefined) {
+            throw "gotify message value was undefined"
+        } else if(title === undefined) {
+            throw "gotify title value was undefined"    
+        } else {
+            if (!priority){
+                priority = gotify.priority
+            }
+    
+            fetch(gotify.url+'/message?token='+gotify.token, { 
+            method: 'POST', 
+            body: 'title='+title+"&message="+message+"&priority="+priority ,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
         }
-        if (!priority){
-            priority = gotify.priority
-        }
-
-        fetch(gotify.url+'/message?token='+gotify.token, { 
-        method: 'POST', 
-        body: 'title='+title+"&message="+message+"&priority="+priority ,
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }})
-        .then(res => res.text())
-        .then(body => console.log(body))
-
     }
 }
-
 
 module.exports = gotify
