@@ -1,0 +1,21 @@
+{
+  "name": "jotify",
+  "version": "1.0.0",
+  "description": "A gotify library for JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitea.nannal.com/nannal/jotify"
+  },
+  "keywords": [
+    "gotify"
+  ],
+  "author": "YahBoi Dabbott",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
