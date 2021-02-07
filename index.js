@@ -7,13 +7,13 @@ gotify = {
     priority: 5,
     send: (title,message, priority) => {
         if (gotify.url == ""){
-            throw "gotify url value empty, please use:  gotify.url == 'https://gotify.mydomain.tld'"
+            throw new Error("gotify url value empty, please use:  gotify.url == 'https://gotify.mydomain.tld'")
         } else if(gotify.token == "") {
-            throw "gotify url value empty, please use:  gotify.token == 'xyzxyz'"
+            throw new Error("gotify url value empty, please use:  gotify.token == 'xyzxyz'")
         } else if(message === undefined) {
-            throw "gotify message value was undefined"
+            throw new Error("gotify message value was undefined")
         } else if(title === undefined) {
-            throw "gotify title value was undefined"    
+            throw new Error("gotify title value was undefined")
         } else {
             if (!priority){
                 priority = gotify.priority

@@ -1,6 +1,6 @@
 {
   "name": "jotify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A dead simple gotify library for sending arbitrary messages in JS",
   "main": "index.js",
   "scripts": {
